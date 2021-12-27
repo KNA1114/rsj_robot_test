@@ -19,9 +19,9 @@ public:
   {
     ros::NodeHandle nh;
     pub_twist_ = nh.advertise<geometry_msgs::Twist>(
-        "cmd_vel", 5);
+        "/ypspur_ros/cmd_vel", 5);
     sub_odom_ = nh.subscribe(
-        "odom", 5,
+        "/ypspur_ros/odom", 5,
         &RSJRobotTestNode::cbOdom, this);
   }
   void mainloop()
